@@ -1,10 +1,8 @@
 package dao;
 
-import org.apache.commons.csv.CSVRecord;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 public interface IQuestions {
-    Iterable<CSVRecord> getQuestions() throws FileNotFoundException, IOException;
+    Map<String, List<String>> getQuestions();
 }
