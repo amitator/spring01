@@ -5,10 +5,15 @@ import dao.QuestionsImpl;
 
 import java.util.*;
 
+/**
+ * Quiz workflow
+ */
+
 public class QuizImpl implements IQuiz {
 
     private int correctCounter = 0;
     Map<String, List<String>> questionsMap;
+
 
     public void userName(){
         UserNameImpl userName = new UserNameImpl();
@@ -23,35 +28,13 @@ public class QuizImpl implements IQuiz {
     }
 
     public void getAnswer() {
+        IQuestionsRandomizer questionsRandomizer = new QuestionsRandomizerImpl();
         Scanner scanner = new Scanner(System.in);
         for (Map.Entry<String, List<String>> entry : questionsMap.entrySet()){
-            int rightAnswer = 0;
             System.out.println(entry.getKey());
-
-            //Making random order of answers
-            int listLength = entry.getValue().size();
-            Random r = new Random();
-            int indx = r.nextInt(listLength);
             Map<Integer, String> questionsOrder = new TreeMap<Integer, String>();
-            Integer counter = 0;
-
-            for (String s : entry.getValue()){
-                while(true) {
-                    if (!questionsOrder.containsKey(indx)) {
-                        if (counter == 0) {
-                            rightAnswer = indx + 1;
-                        }
-                        questionsOrder.put(indx, s);
-                        counter++;
-                        indx = r.nextInt(listLength);
-                        break;
-                    }
-                    if (counter == listLength) {
-                        break;
-                    }
-                    indx = r.nextInt(listLength);
-                }
-            }
+            questionsOrder = questionsRandomizer.randomize(entry.getValue());
+            int rightAnswer = questionsRandomizer.getRightAnswer();
             System.out.println("=========");
             for (Map.Entry<Integer, String> question : questionsOrder.entrySet() ){
                 System.out.print(question.getKey() + 1);

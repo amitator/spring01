@@ -24,14 +24,6 @@ public class QuestionsImpl implements IQuestions {
                 for (int i = 1; i < record.size(); i++) {
                     list.add(record.get(i));
                 }
-//                String correctAnswer = record.get(1);
-//                String nonCorrectOne = record.get(2);
-//                String nonCorrectTwo = record.get(3);
-//                String nonCorrectThree = record.get(4);
-//                list.add(correctAnswer);
-//                list.add(nonCorrectOne);
-//                list.add(nonCorrectTwo);
-//                list.add(nonCorrectThree);
                 map.put(question, list);
             }
         } catch (FileNotFoundException e) {
