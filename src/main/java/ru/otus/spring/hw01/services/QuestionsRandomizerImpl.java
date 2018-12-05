@@ -1,4 +1,4 @@
-package services;
+package ru.otus.spring.hw01.services;
 
 import java.util.List;
 import java.util.Map;

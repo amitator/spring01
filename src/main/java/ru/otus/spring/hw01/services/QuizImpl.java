@@ -1,7 +1,7 @@
-package services;
+package ru.otus.spring.hw01.services;
 
-import dao.IQuestions;
-import dao.QuestionsImpl;
+import ru.otus.spring.hw01.dao.IQuestionsDao;
+import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
 
 import java.util.*;
 
@@ -22,7 +22,7 @@ public class QuizImpl implements IQuiz {
 
     public void collectQuestions() {
         questionsMap = new HashMap<String, List<String>>();
-        IQuestions questions = new QuestionsImpl();
+        IQuestionsDao questions = new QuestionsDaoImpl();
         questionsMap = questions.getQuestions();
 
     }

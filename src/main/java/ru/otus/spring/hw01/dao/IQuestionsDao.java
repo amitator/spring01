@@ -1,8 +1,8 @@
-package dao;
+package ru.otus.spring.hw01.dao;
 
 import java.util.List;
 import java.util.Map;
 
-public interface IQuestions {
+public interface IQuestionsDao {
     Map<String, List<String>> getQuestions();
 }

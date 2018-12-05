@@ -1,12 +1,9 @@
-package services;
+package ru.otus.spring.hw01.services;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 
 /**
  * Reading questions from file
@@ -15,8 +12,13 @@ import java.io.Reader;
  */
 
 public class QuestionReaderImpl implements IQuestionReader {
+
+    public QuestionReaderImpl(){};
+
     public Iterable<CSVRecord> getQuestions() throws FileNotFoundException, IOException {
-        Reader in = new FileReader("src/main/resources/data.csv");
+        String data = "data.csv";
+        File dataFile = new File(this.getClass().getResource("/" + data).getFile());
+        Reader in = new FileReader(dataFile);
         Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
 
         return records;

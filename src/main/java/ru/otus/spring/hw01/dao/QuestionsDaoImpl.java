@@ -1,7 +1,7 @@
-package dao;
+package ru.otus.spring.hw01.dao;
 
 import org.apache.commons.csv.CSVRecord;
-import services.QuestionReaderImpl;
+import ru.otus.spring.hw01.services.QuestionReaderImpl;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class QuestionsImpl implements IQuestions {
+public class QuestionsDaoImpl implements IQuestionsDao {
 
     QuestionReaderImpl questions = new QuestionReaderImpl();
 
