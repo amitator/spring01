@@ -14,12 +14,6 @@ public class QuizImpl implements IQuiz {
     private int correctCounter = 0;
     Map<String, List<String>> questionsMap;
 
-
-    public void userName(){
-        UserNameImpl userName = new UserNameImpl();
-        userName.getUserName();
-    }
-
     public void collectQuestions() {
         questionsMap = new HashMap<String, List<String>>();
         IQuestionsDao questions = new QuestionsDaoImpl();
