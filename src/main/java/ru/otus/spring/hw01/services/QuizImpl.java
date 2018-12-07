@@ -14,9 +14,9 @@ public class QuizImpl implements Quiz {
     private int correctCounter = 0;
     Map<String, List<String>> questionsMap;
 
-    public void collectQuestions() {
+    public void collectQuestions(QuestionsReader reader) {
         questionsMap = new HashMap<String, List<String>>();
-        QuestionsDao questions = new QuestionsDaoImpl();
+        QuestionsDao questions = new QuestionsDaoImpl(reader);
         questionsMap = questions.getQuestionsReader();
 
     }
