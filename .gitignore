@@ -2,5 +2,6 @@
 /out/
 /target/
 *.xml
+!context.xml
 *.class
 *.iml
