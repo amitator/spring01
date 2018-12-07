@@ -1,6 +1,6 @@
 package ru.otus.spring.hw01.services;
 
-import ru.otus.spring.hw01.dao.IQuestionsDao;
+import ru.otus.spring.hw01.dao.QuestionsDao;
 import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
 
 import java.util.*;
@@ -9,20 +9,20 @@ import java.util.*;
  * Quiz workflow
  */
 
-public class QuizImpl implements IQuiz {
+public class QuizImpl implements Quiz {
 
     private int correctCounter = 0;
     Map<String, List<String>> questionsMap;
 
     public void collectQuestions() {
         questionsMap = new HashMap<String, List<String>>();
-        IQuestionsDao questions = new QuestionsDaoImpl();
-        questionsMap = questions.getQuestions();
+        QuestionsDao questions = new QuestionsDaoImpl();
+        questionsMap = questions.getQuestionsReader();
 
     }
 
     public void getAnswer() {
-        IQuestionsRandomizer questionsRandomizer = new QuestionsRandomizerImpl();
+        QuestionsRandomizer questionsRandomizer = new QuestionsRandomizerImpl();
         Scanner scanner = new Scanner(System.in);
         for (Map.Entry<String, List<String>> entry : questionsMap.entrySet()){
             System.out.println(entry.getKey());

@@ -4,9 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="questionsDao" class="ru.otus.spring.hw01.dao.QuestionsDaoImpl" />
+    <bean id="questionsDao" class="ru.otus.spring.hw01.dao.QuestionsDaoImpl">
+        <constructor-arg name="questions" ref="questionsReader"/>
+    </bean>
 
-    <bean id="questionReader" class="ru.otus.spring.hw01.services.QuestionReaderImpl" />
+    <bean id="questionsReader" class="ru.otus.spring.hw01.services.QuestionsReaderImpl" />
 
     <bean id="questionsRandomizer" class="ru.otus.spring.hw01.services.QuestionsRandomizerImpl" />
 

@@ -11,9 +11,9 @@ import java.io.*;
  * @return  Iterable<CSVRecord>
  */
 
-public class QuestionReaderImpl implements IQuestionReader {
+public class QuestionsReaderImpl implements QuestionsReader {
 
-    public QuestionReaderImpl(){};
+    public QuestionsReaderImpl(){};
 
     public Iterable<CSVRecord> getQuestions() throws FileNotFoundException, IOException {
         String data = "data.csv";

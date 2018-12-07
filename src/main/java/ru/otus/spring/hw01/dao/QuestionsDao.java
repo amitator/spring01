@@ -3,6 +3,6 @@ package ru.otus.spring.hw01.dao;
 import java.util.List;
 import java.util.Map;
 
-public interface IQuestionsDao {
-    Map<String, List<String>> getQuestions();
+public interface QuestionsDao {
+    Map<String, List<String>> getQuestionsReader();
 }

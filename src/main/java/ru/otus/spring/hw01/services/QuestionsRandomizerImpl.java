@@ -11,7 +11,7 @@ import java.util.TreeMap;
  */
 
 
-public class QuestionsRandomizerImpl implements IQuestionsRandomizer {
+public class QuestionsRandomizerImpl implements QuestionsRandomizer {
     private Integer rightAnswer;
 
     /**

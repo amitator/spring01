@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Only reads user name
  */
-public class UserNameImpl implements IUserName {
+public class UserNameImpl implements UserName {
     /**
      *
      * @return User name
