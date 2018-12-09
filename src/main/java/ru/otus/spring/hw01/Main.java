@@ -1,7 +1,6 @@
 package ru.otus.spring.hw01;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.otus.spring.hw01.dao.QuestionsDao;
 import ru.otus.spring.hw01.services.QuestionsReader;
 import ru.otus.spring.hw01.services.Quiz;
 import ru.otus.spring.hw01.services.UserName;
