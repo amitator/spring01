@@ -18,7 +18,7 @@ public class QuestionsDaoImpl implements QuestionsDao {
         this.questionsReader = questions;
     }
 
-    public Map<String, List<String>> getQuestionsReader() {
+    public Map<String, List<String>> getQuestions() {
         Map<String, List<String>> map = new HashMap<String, List<String>>();
         try {
             Iterable<CSVRecord> records = questionsReader.getQuestions();

@@ -13,11 +13,14 @@ import java.io.*;
 
 public class QuestionsReaderImpl implements QuestionsReader {
 
-    public QuestionsReaderImpl(){};
+    private String fileName;
+
+    public QuestionsReaderImpl(String fileName){
+        this.fileName = fileName;
+    }
 
     public Iterable<CSVRecord> getQuestions() throws FileNotFoundException, IOException {
-        String data = "data.csv";
-        File dataFile = new File(this.getClass().getResource("/" + data).getFile());
+        File dataFile = new File(this.getClass().getResource("/" + fileName).getFile());
         Reader in = new FileReader(dataFile);
         Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
 

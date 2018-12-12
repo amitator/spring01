@@ -8,7 +8,9 @@
         <constructor-arg name="questions" ref="questionsReader"/>
     </bean>
 
-    <bean id="questionsReader" class="ru.otus.spring.hw01.services.QuestionsReaderImpl" />
+    <bean id="questionsReader" class="ru.otus.spring.hw01.services.QuestionsReaderImpl">
+        <constructor-arg name="fileName" value="data.csv" />
+    </bean>
 
     <bean id="questionsRandomizer" class="ru.otus.spring.hw01.services.QuestionsRandomizerImpl" />
 

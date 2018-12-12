@@ -17,7 +17,7 @@ public class QuizImpl implements Quiz {
     public void collectQuestions(QuestionsReader reader) {
         questionsMap = new HashMap<String, List<String>>();
         QuestionsDao questions = new QuestionsDaoImpl(reader);
-        questionsMap = questions.getQuestionsReader();
+        questionsMap = questions.getQuestions();
 
     }
 
