@@ -1,6 +1,5 @@
 package ru.otus.spring.hw01.services;
 
-import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.dao.QuestionsDao;
 import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
 
@@ -10,7 +9,6 @@ import java.util.*;
  * Quiz workflow
  */
 
-@Service
 public class QuizImpl implements Quiz {
 
     private int correctCounter = 0;

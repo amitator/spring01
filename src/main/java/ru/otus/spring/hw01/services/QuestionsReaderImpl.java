@@ -2,7 +2,6 @@ package ru.otus.spring.hw01.services;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.springframework.stereotype.Service;
 
 import java.io.*;
 
@@ -12,7 +11,7 @@ import java.io.*;
  * @return  Iterable<CSVRecord>
  */
 
-@Service
+
 public class QuestionsReaderImpl implements QuestionsReader {
 
     private String fileName;

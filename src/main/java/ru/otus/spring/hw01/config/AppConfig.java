@@ -17,7 +17,7 @@ public class AppConfig {
         return new QuestionsDaoImpl(questionsReader);
     }
 
-    @Bean("questionsReader")
+    @Bean
     QuestionsReader questionsReader (@Value("${file.name}") String fileName){
         return new QuestionsReaderImpl(fileName);
     }
