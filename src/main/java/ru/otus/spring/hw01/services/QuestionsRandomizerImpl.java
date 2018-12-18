@@ -1,5 +1,7 @@
 package ru.otus.spring.hw01.services;
 
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -10,6 +12,7 @@ import java.util.TreeMap;
  *
  */
 
+@Service
 public class QuestionsRandomizerImpl implements QuestionsRandomizer {
     private Integer rightAnswer;
 

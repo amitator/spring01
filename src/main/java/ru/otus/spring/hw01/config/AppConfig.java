@@ -22,18 +22,18 @@ public class AppConfig {
         return new QuestionsReaderImpl(fileName);
     }
 
-    @Bean
-    QuestionsRandomizer questionsRandomizer(){
-        return new QuestionsRandomizerImpl();
-    }
-
-    @Bean
-    UserName userName(){
-        return new UserNameImpl();
-    }
-
-    @Bean
-    Quiz quiz(){
-        return new QuizImpl();
-    }
+//    @Bean
+//    QuestionsRandomizer questionsRandomizer(){
+//        return new QuestionsRandomizerImpl();
+//    }
+//
+//    @Bean
+//    UserName userName(){
+//        return new UserNameImpl();
+//    }
+//
+//    @Bean
+//    Quiz quiz(){
+//        return new QuizImpl();
+//    }
 }
