@@ -1,6 +1,8 @@
 package ru.otus.spring.hw01.dao;
 
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.services.QuestionsReader;
 
@@ -16,7 +18,8 @@ public class QuestionsDaoImpl implements QuestionsDao {
 
     private QuestionsReader questionsReader;
 
-    public QuestionsDaoImpl(QuestionsReader questions){
+    @Autowired
+    public QuestionsDaoImpl(@Qualifier("questionsReader") QuestionsReader questions){
         this.questionsReader = questions;
     }
 
