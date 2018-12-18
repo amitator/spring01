@@ -1,6 +1,7 @@
 package ru.otus.spring.hw01.dao;
 
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.services.QuestionsReader;
 
 import java.io.FileNotFoundException;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Service
 public class QuestionsDaoImpl implements QuestionsDao {
 
     private QuestionsReader questionsReader;

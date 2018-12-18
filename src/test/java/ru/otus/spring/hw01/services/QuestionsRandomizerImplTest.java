@@ -23,6 +23,7 @@ public class QuestionsRandomizerImplTest {
         list.add("Wrong answer");
         list.add("Wrong answer");
         list.add("Wrong answer");
+        list.add("Wrong answer");
         map = randomizer.randomize(list);
     }
 
@@ -37,12 +38,12 @@ public class QuestionsRandomizerImplTest {
     @DisplayName("Randomize Number Test")
     @Test
     public void randomizeNumberTest() throws Exception {
-        assertThat(map).containsKeys(0,1,2,3);
+        assertThat(map).containsKeys(0,1,2,3,4);
     }
 
     @Test
     public void getRightAnswer() throws Exception {
-        assertThat(randomizer.getRightAnswer()).isBetween(0,3);
+        assertThat(randomizer.getRightAnswer()).isBetween(0,4);
     }
 
 }
