@@ -24,9 +24,10 @@ public class QuestionsReaderImpl implements QuestionsReader {
 
     private String fileName;
 
-    public QuestionsReaderImpl(){
+    @Autowired
+    public QuestionsReaderImpl(MessageSource messageSource){
         Locale locale = LocaleContextHolder.getLocale();
-        fileName = messageSource.getMessage("file.name", new String[]{"user"}, locale);
+        fileName = messageSource.getMessage("file.name", new String[]{""}, locale);
     }
 
     public Iterable<CSVRecord> getQuestions() throws FileNotFoundException, IOException {
