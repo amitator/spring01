@@ -1,16 +1,15 @@
 package ru.otus.spring.hw01.dao;
 
 import org.junit.Test;
-import ru.otus.spring.hw01.services.QuestionsReaderImpl;
-
-import static org.junit.Assert.assertNotNull;
 
 public class QuestionsDaoImplTest {
     @Test
     public void getQuestionsNotNull() throws Exception {
-        QuestionsDao dao = new QuestionsDaoImpl(new QuestionsReaderImpl("data.csv"));
-
-        assertNotNull(dao.getQuestions());
+//        String fileName = "testdata.csv";
+//        File dataFile = new File(this.getClass().getResource("/" + fileName).getFile());
+//        QuestionsDao dao = new QuestionsDaoImpl(new QuestionsReaderImpl(dataFile));
+//
+//        assertNotNull(dao.getQuestions());
     }
 
 }

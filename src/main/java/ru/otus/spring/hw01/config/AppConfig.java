@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import ru.otus.spring.hw01.dao.QuestionsDao;
 import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
-import ru.otus.spring.hw01.services.*;
+import ru.otus.spring.hw01.services.QuestionsReader;
+import ru.otus.spring.hw01.services.QuestionsReaderImpl;
 
 @Configuration
 @PropertySource("app.properties")
@@ -17,23 +18,10 @@ public class AppConfig {
         return new QuestionsDaoImpl(questionsReader);
     }
 
-    @Bean
-    QuestionsReader questionsReader (@Value("${file.name}") String fileName){
-        return new QuestionsReaderImpl(fileName);
-    }
+//    @Bean
+//    QuestionsReader questionsReader (@Value("${file.name}") String fileName){
+//        return new QuestionsReaderImpl(fileName);
+//    }
 
-//    @Bean
-//    QuestionsRandomizer questionsRandomizer(){
-//        return new QuestionsRandomizerImpl();
-//    }
-//
-//    @Bean
-//    UserName userName(){
-//        return new UserNameImpl();
-//    }
-//
-//    @Bean
-//    Quiz quiz(){
-//        return new QuizImpl();
-//    }
+
 }

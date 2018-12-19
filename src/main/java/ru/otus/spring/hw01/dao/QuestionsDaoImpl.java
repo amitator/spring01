@@ -19,7 +19,7 @@ public class QuestionsDaoImpl implements QuestionsDao {
     private QuestionsReader questionsReader;
 
     @Autowired
-    public QuestionsDaoImpl(@Qualifier("questionsReader") QuestionsReader questions){
+    public QuestionsDaoImpl(@Qualifier("questionsReaderImpl") QuestionsReader questions){
         this.questionsReader = questions;
     }
 

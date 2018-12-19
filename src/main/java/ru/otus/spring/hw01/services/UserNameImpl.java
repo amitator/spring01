@@ -2,6 +2,7 @@ package ru.otus.spring.hw01.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Locale;
@@ -23,8 +24,8 @@ public class UserNameImpl implements UserName {
 
     public String getUserName() {
         Scanner scanner = new Scanner(System.in);
-//        Locale locale = forLanguageTag("en_US");
-        System.out.print(messageSource.getMessage("welcome.msg", new String[]{"user"}, Locale.ENGLISH));
+        Locale locale = LocaleContextHolder.getLocale();
+        System.out.print(messageSource.getMessage("welcome.msg", new String[]{"user"}, locale));
         return scanner.nextLine();
     }
 }
