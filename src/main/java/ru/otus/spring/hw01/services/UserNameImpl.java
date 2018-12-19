@@ -23,6 +23,7 @@ public class UserNameImpl implements UserName {
 
     public String getUserName() {
         Scanner scanner = new Scanner(System.in);
+//        Locale locale = forLanguageTag("en_US");
         System.out.print(messageSource.getMessage("welcome.msg", new String[]{"user"}, Locale.ENGLISH));
         return scanner.nextLine();
     }

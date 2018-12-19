@@ -14,7 +14,6 @@ public class Main {
 
 //        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/context.xml");
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
-
         Quiz quiz = ctx.getBean(Quiz.class);
         UserName userName = ctx.getBean(UserName.class);
         QuestionsReader reader = ctx.getBean(QuestionsReader.class);
@@ -22,5 +21,6 @@ public class Main {
         quiz.collectQuestions(reader);
         quiz.getAnswer();
         quiz.showResult();
+
     }
 }
