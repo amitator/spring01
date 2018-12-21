@@ -22,6 +22,8 @@ public class UserNameImpl implements UserName {
     @Autowired
     private MessageSource messageSource;
 
+    public UserNameImpl(MessageSource messageSource){}
+
     public String getUserName() {
         Scanner scanner = new Scanner(System.in);
         Locale locale = LocaleContextHolder.getLocale();

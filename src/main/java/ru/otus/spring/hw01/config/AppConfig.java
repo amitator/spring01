@@ -1,22 +1,16 @@
 package ru.otus.spring.hw01.config;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import ru.otus.spring.hw01.dao.QuestionsDao;
-import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
-import ru.otus.spring.hw01.services.QuestionsReader;
-import ru.otus.spring.hw01.services.QuestionsReaderImpl;
 
 @Configuration
 @PropertySource("app.properties")
 public class AppConfig {
 
-    @Bean
-    QuestionsDao questionsDao (QuestionsReader questionsReader){
-        return new QuestionsDaoImpl(questionsReader);
-    }
+//    @Bean
+//    QuestionsDao questionsDao (QuestionsReader questionsReader){
+//        return new QuestionsDaoImpl(questionsReader);
+//    }
 
 //    @Bean
 //    QuestionsReader questionsReader (@Value("${file.name}") String fileName){

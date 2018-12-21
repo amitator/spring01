@@ -24,7 +24,6 @@ public class QuestionsReaderImpl implements QuestionsReader {
 
     private String fileName;
 
-    @Autowired
     public QuestionsReaderImpl(MessageSource messageSource){
         Locale locale = LocaleContextHolder.getLocale();
         fileName = messageSource.getMessage("file.name", new String[]{""}, locale);
