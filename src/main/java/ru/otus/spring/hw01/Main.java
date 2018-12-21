@@ -11,7 +11,6 @@ import ru.otus.spring.hw01.services.UserName;
 public class Main {
     public static void main(String[] args) {
 
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/context.xml");
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
         Quiz quiz = ctx.getBean(Quiz.class);
         UserName userName = ctx.getBean(UserName.class);
