@@ -1,5 +1,7 @@
 package ru.otus.spring.hw01.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.dao.QuestionsDao;
 import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
 
@@ -9,15 +11,21 @@ import java.util.*;
  * Quiz workflow
  */
 
+@Service
 public class QuizImpl implements Quiz {
+
+    @Autowired
+    private QuestionsReaderImpl reader;
+
+    public QuizImpl(QuestionsReaderImpl reader){}
 
     private int correctCounter = 0;
     Map<String, List<String>> questionsMap;
 
-    public void collectQuestions(QuestionsReader reader) {
+    public void collectQuestions() {
         questionsMap = new HashMap<String, List<String>>();
         QuestionsDao questions = new QuestionsDaoImpl(reader);
-        questionsMap = questions.getQuestionsReader();
+        questionsMap = questions.getQuestions();
 
     }
 
@@ -45,5 +53,11 @@ public class QuizImpl implements Quiz {
     public void showResult() {
         float score = (float)correctCounter/(float)questionsMap.size() * 100;
         System.out.println("Your score: " + score + "%");
+    }
+
+    public void run(){
+        collectQuestions();
+        getAnswer();
+        showResult();
     }
 }

@@ -4,5 +4,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface QuestionsDao {
-    Map<String, List<String>> getQuestionsReader();
+    Map<String, List<String>> getQuestions();
 }
