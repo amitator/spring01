@@ -1,21 +1,39 @@
 package ru.otus.spring.hw01;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.otus.spring.hw01.services.Quiz;
 import ru.otus.spring.hw01.services.UserName;
 
+@RestController
 @ComponentScan
 @Configuration
+@SpringBootApplication
+@EnableAutoConfiguration
 public class Main {
+
+    @Autowired
+    private Quiz quiz;
+
+    @Autowired
+    private UserName userName;
+
     public static void main(String[] args) {
 
-        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
-        Quiz quiz = ctx.getBean(Quiz.class);
-        UserName userName = ctx.getBean(UserName.class);
+        SpringApplication.run(Main.class, args);
+
+    }
+
+    @RequestMapping("/")
+    String home() {
         userName.getUserName();
         quiz.run();
-
+        return "Hello World!";
     }
 }
