@@ -30,9 +30,8 @@ public class QuestionsReaderImpl implements QuestionsReader {
     }
 
     public Iterable<CSVRecord> getQuestions() throws FileNotFoundException, IOException {
-        File dataFile = new File(this.getClass().getResource("/" + fileName).getFile());
-//        File dataFile = new File(String.valueOf(this.getClass().getResourceAsStream("/" + fileName)));
-        Reader in = new FileReader(dataFile);
+        InputStream dataFile = this.getClass().getResourceAsStream("/" + fileName);
+        Reader in = new InputStreamReader(dataFile);
         Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
 
         return records;
