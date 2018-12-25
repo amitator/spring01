@@ -2,7 +2,6 @@ package ru.otus.spring.hw01.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
-import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.dao.QuestionsDao;
 import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
@@ -22,7 +21,8 @@ public class QuizImpl implements Quiz {
     @Autowired
     private MessageSource messageSource;
 
-    private Locale locale = LocaleContextHolder.getLocale();
+    @Autowired
+    private Locale getLocale;
 
     private QuestionsReaderImpl reader;
 
@@ -53,7 +53,7 @@ public class QuizImpl implements Quiz {
                 System.out.print(question.getKey() + 1);
                 System.out.println(question.getValue());
             }
-            System.out.print(messageSource.getMessage("your.answer", new String[]{""}, locale));
+            System.out.print(messageSource.getMessage("your.answer", new String[]{""}, getLocale));
             int answer = scanner.nextInt();
             if (rightAnswer == answer) {
                 correctCounter++;
@@ -63,7 +63,7 @@ public class QuizImpl implements Quiz {
 
     public void showResult() {
         float score = (float)correctCounter/(float)questionsMap.size() * 100;
-        System.out.print(messageSource.getMessage("your.score", new String[]{""}, locale) + score + "%");
+        System.out.print(messageSource.getMessage("your.score", new String[]{""}, getLocale) + score + "%");
     }
 
     public void run(){
