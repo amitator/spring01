@@ -32,7 +32,6 @@ public class Main {
 
     @RequestMapping("/")
     String home() {
-        userName.getUserName();
         quiz.run();
         return "Hello World!";
     }

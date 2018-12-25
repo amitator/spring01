@@ -1,5 +1,6 @@
 package ru.otus.spring.hw01.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.dao.QuestionsDao;
 import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
@@ -12,6 +13,9 @@ import java.util.*;
 
 @Service
 public class QuizImpl implements Quiz {
+
+    @Autowired
+    private UserNameImpl userName;
 
     private QuestionsReaderImpl reader;
 
@@ -56,6 +60,7 @@ public class QuizImpl implements Quiz {
     }
 
     public void run(){
+        userName.getUserName();
         collectQuestions();
         getAnswer();
         showResult();
