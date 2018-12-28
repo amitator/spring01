@@ -1,6 +1,5 @@
 package ru.otus.spring.hw01.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.dao.QuestionsDao;
@@ -15,19 +14,19 @@ import java.util.*;
 @Service
 public class QuizImpl implements Quiz {
 
-    @Autowired
     private UserNameImpl userName;
 
-    @Autowired
     private MessageSource messageSource;
 
-    @Autowired
     private Locale getLocale;
 
     private QuestionsReaderImpl reader;
 
-    public QuizImpl(QuestionsReaderImpl reader){
+    public QuizImpl(QuestionsReaderImpl reader, Locale getLocale, MessageSource messageSource, UserNameImpl userName){
         this.reader = reader;
+        this.getLocale = getLocale;
+        this.messageSource = messageSource;
+        this.userName = userName;
     }
 
     private int correctCounter = 0;
@@ -44,7 +43,7 @@ public class QuizImpl implements Quiz {
         QuestionsRandomizer questionsRandomizer = new QuestionsRandomizerImpl();
         Scanner scanner = new Scanner(System.in);
         for (Map.Entry<String, List<String>> entry : questionsMap.entrySet()){
-            System.out.println(entry.getKey());
+            System.out.println("\n" + entry.getKey());
             Map<Integer, String> questionsOrder = new TreeMap<Integer, String>();
             questionsOrder = questionsRandomizer.randomize(entry.getValue());
             int rightAnswer = questionsRandomizer.getRightAnswer();
@@ -63,7 +62,7 @@ public class QuizImpl implements Quiz {
 
     public void showResult() {
         float score = (float)correctCounter/(float)questionsMap.size() * 100;
-        System.out.print(messageSource.getMessage("your.score", new String[]{""}, getLocale) + score + "%");
+        System.out.print("\n" + messageSource.getMessage("your.score", new String[]{""}, getLocale) + score + "%\n\n");
     }
 
     public void run(){
