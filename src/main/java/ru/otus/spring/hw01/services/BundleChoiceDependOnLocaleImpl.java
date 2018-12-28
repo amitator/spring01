@@ -1,12 +1,17 @@
 package ru.otus.spring.hw01.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
+import ru.otus.spring.hw01.config.YAMLConfig;
 
 import java.util.Locale;
 
 @Service
 public class BundleChoiceDependOnLocaleImpl implements BundleChoiceDependOnLocale {
+
+    @Autowired
+    private YAMLConfig config;
 
     @Override
     public Locale getLocale() {
@@ -15,19 +20,8 @@ public class BundleChoiceDependOnLocaleImpl implements BundleChoiceDependOnLocal
 
     @Override
     public String selectBundleFile() {
-        String fileName;
         Locale currentLocale = getLocale();
-        switch (currentLocale.getDisplayLanguage()){
-            case "en_EN":
-                fileName = "data.csv";
-                break;
-            case "ru_RU":
-                fileName = "data_ru.csv";
-                break;
-            default:
-                fileName = "data.csv";
-                break;
-        }
-        return fileName;
+
+        return String.format(config.getBundle(), currentLocale);
     }
 }

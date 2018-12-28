@@ -1,4 +1,4 @@
-package ru.otus.spring.hw01.locale;
+package ru.otus.spring.hw01.config;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
