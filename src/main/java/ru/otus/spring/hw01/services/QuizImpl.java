@@ -18,15 +18,15 @@ public class QuizImpl implements Quiz {
 
     private MessageSource messageSource;
 
-    private Locale getLocale;
-
     private QuestionsReaderImpl reader;
 
-    public QuizImpl(QuestionsReaderImpl reader, Locale getLocale, MessageSource messageSource, UserNameImpl userName){
+    private BundleChoiceDependOnLocale bundle;
+
+    public QuizImpl(QuestionsReaderImpl reader, MessageSource messageSource, UserNameImpl userName, BundleChoiceDependOnLocale bundle){
         this.reader = reader;
-        this.getLocale = getLocale;
         this.messageSource = messageSource;
         this.userName = userName;
+        this.bundle = bundle;
     }
 
     private int correctCounter = 0;
@@ -52,7 +52,7 @@ public class QuizImpl implements Quiz {
                 System.out.print(question.getKey() + 1);
                 System.out.println(question.getValue());
             }
-            System.out.print(messageSource.getMessage("your.answer", new String[]{""}, getLocale));
+            System.out.print(messageSource.getMessage("your.answer", new String[]{""}, bundle.getLocale()));
             int answer = scanner.nextInt();
             if (rightAnswer == answer) {
                 correctCounter++;
@@ -62,7 +62,8 @@ public class QuizImpl implements Quiz {
 
     public void showResult() {
         float score = (float)correctCounter/(float)questionsMap.size() * 100;
-        System.out.print("\n" + messageSource.getMessage("your.score", new String[]{""}, getLocale) + score + "%\n\n");
+        System.out.print("\n" + messageSource.getMessage("your.score", new String[]{""}, bundle.getLocale())
+                + score + "%\n\n");
     }
 
     public void run(){

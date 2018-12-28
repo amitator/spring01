@@ -15,14 +15,17 @@ import java.io.*;
 @Service
 public class QuestionsReaderImpl implements QuestionsReader {
 
-    private String selectBundleFile;
+    private BundleChoiceDependOnLocale bundle;
 
-    public QuestionsReaderImpl(String selectBundleFile){
-        this.selectBundleFile = selectBundleFile;
+    private String fileName;
+
+    public QuestionsReaderImpl(BundleChoiceDependOnLocale bundle){
+        this.bundle = bundle;
+        fileName = bundle.selectBundleFile();
     }
 
     public Iterable<CSVRecord> getQuestions() throws FileNotFoundException, IOException {
-        InputStream dataFile = this.getClass().getResourceAsStream("/" + selectBundleFile);
+        InputStream dataFile = this.getClass().getResourceAsStream("/" + fileName);
         Reader in = new InputStreamReader(dataFile);
         Iterable<CSVRecord> records = CSVFormat.EXCEL.parse(in);
 
