@@ -19,6 +19,10 @@ public class QuestionsReaderImpl implements QuestionsReader {
 
     private String fileName;
 
+    public void setBundle(BundleChoiceDependOnLocale bundle){
+        this.bundle = bundle;
+    }
+
     public QuestionsReaderImpl(BundleChoiceDependOnLocale bundle){
         this.bundle = bundle;
         fileName = bundle.selectBundleFile();
