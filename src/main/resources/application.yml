@@ -1,0 +1,4 @@
+logging:
+  level:
+    ROOT: INFO
+bundle: data_%s.csv

@@ -1,6 +1,6 @@
 package ru.otus.spring.hw01.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.dao.QuestionsDao;
 import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
@@ -14,10 +14,20 @@ import java.util.*;
 @Service
 public class QuizImpl implements Quiz {
 
-    @Autowired
+    private UserNameImpl userName;
+
+    private MessageSource messageSource;
+
     private QuestionsReaderImpl reader;
 
-    public QuizImpl(QuestionsReaderImpl reader){}
+    private BundleChoiceDependOnLocale bundle;
+
+    public QuizImpl(QuestionsReaderImpl reader, MessageSource messageSource, UserNameImpl userName, BundleChoiceDependOnLocale bundle){
+        this.reader = reader;
+        this.messageSource = messageSource;
+        this.userName = userName;
+        this.bundle = bundle;
+    }
 
     private int correctCounter = 0;
     Map<String, List<String>> questionsMap;
@@ -33,7 +43,7 @@ public class QuizImpl implements Quiz {
         QuestionsRandomizer questionsRandomizer = new QuestionsRandomizerImpl();
         Scanner scanner = new Scanner(System.in);
         for (Map.Entry<String, List<String>> entry : questionsMap.entrySet()){
-            System.out.println(entry.getKey());
+            System.out.println("\n" + entry.getKey());
             Map<Integer, String> questionsOrder = new TreeMap<Integer, String>();
             questionsOrder = questionsRandomizer.randomize(entry.getValue());
             int rightAnswer = questionsRandomizer.getRightAnswer();
@@ -42,7 +52,7 @@ public class QuizImpl implements Quiz {
                 System.out.print(question.getKey() + 1);
                 System.out.println(question.getValue());
             }
-            System.out.print("Your answer: ");
+            System.out.print(messageSource.getMessage("your.answer", new String[]{""}, bundle.getLocale()));
             int answer = scanner.nextInt();
             if (rightAnswer == answer) {
                 correctCounter++;
@@ -52,10 +62,12 @@ public class QuizImpl implements Quiz {
 
     public void showResult() {
         float score = (float)correctCounter/(float)questionsMap.size() * 100;
-        System.out.println("Your score: " + score + "%");
+        System.out.print("\n" + messageSource.getMessage("your.score", new String[]{""}, bundle.getLocale())
+                + score + "%\n\n");
     }
 
     public void run(){
+        userName.getUserName();
         collectQuestions();
         getAnswer();
         showResult();

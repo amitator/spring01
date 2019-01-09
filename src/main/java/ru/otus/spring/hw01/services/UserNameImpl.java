@@ -1,6 +1,5 @@
 package ru.otus.spring.hw01.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
@@ -19,10 +18,12 @@ public class UserNameImpl implements UserName {
      * @return User name
      */
 
-    @Autowired
     private MessageSource messageSource;
 
-    public UserNameImpl(MessageSource messageSource){}
+
+    public UserNameImpl(MessageSource messageSource){
+        this.messageSource = messageSource;
+    }
 
     public String getUserName() {
         Scanner scanner = new Scanner(System.in);

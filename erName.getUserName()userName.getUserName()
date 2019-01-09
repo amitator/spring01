@@ -1,0 +1,249 @@
+[33mcommit 2550973cee2058d30f57f681faada21bbf1a58e7[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 25 17:29:41 2018 +0300
+
+    fixed annotation
+    fixed ApplicationContext
+
+[33mcommit 88da88259d9940a9f1748ee21250db806d40da7c[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 25 17:20:50 2018 +0300
+
+    moved userName.getUserName() to Quiz
+
+[33mcommit 6702b4e37e60c318a9cdfabe54b18349489d93b4[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 25 17:08:17 2018 +0300
+
+    fixed @Autowiring in QuestionsReaderImpl and fixed constructor
+
+[33mcommit 8a801b42b3917dca131c886b8ca0fdc9d44495eb[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 25 17:05:54 2018 +0300
+
+    removed @Autowiring in QuizImpl in field and fixed constructor
+
+[33mcommit 84769c686902d7d61984e7919b9a272cc4e9f860[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 25 17:03:13 2018 +0300
+
+    removed @Autowiring in UserNameImpl and fixed constructor
+
+[33mcommit 7c0f8705ecf681fa918944f3f24e633cbc5b2bfa[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 25 16:59:09 2018 +0300
+
+    removed AppConfig
+
+[33mcommit a6d447292ce9c679e2117ef5d0e576a9c15f857e[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Sun Dec 23 14:39:16 2018 +0300
+
+    fixed data.csv file avalability in JAR with .getResourceAsStream()
+
+[33mcommit 92fd7df1ba3b87f7996baf7e5f50318f54bfe263[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Sat Dec 22 18:41:23 2018 +0300
+
+    playing with settings
+
+[33mcommit 90b577d69aea24d4ad77ad14ff0494e64ca1c648[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Sat Dec 22 15:50:56 2018 +0300
+
+    added banner.txt. Added application.yml and modified Main.class to be a spring boot application
+
+[33mcommit 0ab0d9a3e112f69dcdc1f31269fb8f7545f87eb2[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Fri Dec 21 18:09:36 2018 +0300
+
+    make app spring boot app
+
+[33mcommit 9fd358c8e949f5d9e1549ca0074ed0a66b1e6161[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Fri Dec 21 18:00:10 2018 +0300
+
+    removed context.xml and it's usage in Main.class
+
+[33mcommit b2a089e0c7000fac55033fc14d4501dba74deb23[m
+Merge: e8b0c2b a251616
+Author: amitator <prus.igor@gmail.com>
+Date:   Fri Dec 21 17:22:31 2018 +0300
+
+    Merge pull request #3 from amitator/hw02
+    
+    Hw02
+
+[33mcommit a2516166f2c576b44de0472a9e8cf50d0f9ec4ee[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Fri Dec 21 17:19:47 2018 +0300
+
+    Pull request comments fix
+
+[33mcommit 320a2744f325f1b6bf8b6ab25e73f5ac6d55b64b[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 19 17:04:07 2018 +0300
+
+    fixed i18n
+
+[33mcommit ae0690e9bf91242c8549d50c1463e3bb96dfa1a8[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 19 13:44:24 2018 +0300
+
+    no @Autowire on MessageSource in QuestionsReader
+
+[33mcommit 2421cc6ee830c9758b2a61d4bf4b49674147dc57[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 19 08:57:50 2018 +0300
+
+    moved bundle to i18n folder
+
+[33mcommit 8eb13a88a262d911092268519917b18ecc0fda4f[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 19 08:52:21 2018 +0300
+
+    moved bundle under /l18n
+
+[33mcommit e34feb79c787b6edef3f69e76f4ac8498c45393f[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 19 08:22:07 2018 +0300
+
+    l18n not working
+
+[33mcommit 4db3d05b222b0c7d31a70cd55d286f722e91ba27[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 19 00:29:39 2018 +0300
+
+    added MessageSource
+
+[33mcommit f0e45239f02a3c041f8d9d78dd629ceec188b900[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 19 00:13:56 2018 +0300
+
+    added localization files
+
+[33mcommit caf5d24384fba3fa473edbdd72860883dc17e9cd[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 18 23:29:38 2018 +0300
+
+    changed config to annotation+java based
+
+[33mcommit cca1c979e36814f67d2adfebe194168daf0baf20[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 18 23:24:16 2018 +0300
+
+    Modified to Java-based configuration
+
+[33mcommit 504a84b3f3d6bbc18ffd12d494bf4db6ab9e6639[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 18 22:13:45 2018 +0300
+
+    removed context.xml. Edited AppConfig.java
+
+[33mcommit 5260ca8f5a52dcfd89fcaa482f7ab210e2ee3c9d[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Tue Dec 18 14:26:59 2018 +0300
+
+    added test prop file and test data file.
+
+[33mcommit 45bf95ed102d3475ebe133ae9165ffa3ce1b966d[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 12 22:16:51 2018 +0300
+
+    added properties file, removed xml config, added java config, removed empty tests
+
+[33mcommit e8b0c2b272b8d4f4bfa71cfbe3ab7252a04b1510[m
+Merge: c216e7b 84096b5
+Author: amitator <prus.igor@gmail.com>
+Date:   Sun Dec 9 21:37:32 2018 +0300
+
+    Merge pull request #2 from amitator/hw01
+    
+    added tests
+
+[33mcommit 84096b54e54f1862318e57272b724ec0ceaae4ff[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Sat Dec 8 01:48:24 2018 +0300
+
+    added tests
+
+[33mcommit c216e7b6846864ef126fb37ba77a7d509dbee590[m
+Merge: 6619af1 fa0e398
+Author: amitator <prus.igor@gmail.com>
+Date:   Fri Dec 7 23:36:56 2018 +0300
+
+    Merge pull request #1 from amitator/hw01
+    
+    Hw01
+
+[33mcommit fa0e398e152cb4235e25eef6edd0effd381caa17[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Fri Dec 7 23:35:49 2018 +0300
+
+    fixed all suggestions from pull request
+
+[33mcommit 6bcd432ac82726b0e6628fa6bc65bfec3205326b[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Fri Dec 7 20:16:49 2018 +0300
+
+    changes from pull request comments
+
+[33mcommit 289ee3a111f83beeef3907c17317cf2fd04873f2[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Thu Dec 6 15:25:53 2018 +0300
+
+    removed context.xml from .gitignore
+
+[33mcommit 3abbd97befac106bdc5b5ad1c1c81a57808a6ad6[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Thu Dec 6 01:14:32 2018 +0300
+
+    added blank testes
+
+[33mcommit d6ae8ca55debf38e9d500734ba83d595b27b826d[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Wed Dec 5 10:52:09 2018 +0300
+
+    added beans
+
+[33mcommit 027bdf696824451bf05c7681e9d3f09facb0f3db[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Mon Dec 3 21:12:26 2018 +0300
+
+    Comments added
+
+[33mcommit 6c319c2a870963e27d14883d2c9f91036ea5b2b4[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Mon Dec 3 12:17:02 2018 +0300
+
+     Refactored. Needs spring context setup
+
+[33mcommit 5828fccf65af8c466a98f3c37c9d303f7cd90ec9[m
+Author:  <test@i732Gb.localdomain>
+Date:   Mon Dec 3 11:02:38 2018 +0300
+
+    working version. Needs refactoring
+
+[33mcommit a83fa042c2225759ff64f0450a7a951b15acbc1e[m
+Author:  <test@i732Gb.localdomain>
+Date:   Mon Dec 3 00:32:01 2018 +0300
+
+    working scratch
+
+[33mcommit cfab5773e0ccfea035a365645e4139b68562e408[m
+Author:  <test@i732Gb.localdomain>
+Date:   Sun Dec 2 23:00:30 2018 +0300
+
+    initial
+
+[33mcommit 6619af117b802f2dbb45ad220bc6d0bc12e8f01a[m
+Author:  <test@i732Gb.localdomain>
+Date:   Sun Dec 2 22:50:05 2018 +0300
+
+    added .gitignore
+
+[33mcommit b79a82384fcbb8fa9b6f3a7b219f0f09d2ff46cb[m
+Author: Igor Prus <prus.igor@gmail.com>
+Date:   Sun Dec 2 22:47:44 2018 +0300
+
+    Initial commit
