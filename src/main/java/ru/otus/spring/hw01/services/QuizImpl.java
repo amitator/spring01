@@ -3,7 +3,6 @@ package ru.otus.spring.hw01.services;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
 import ru.otus.spring.hw01.dao.QuestionsDao;
-import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
 
 import java.util.*;
 
@@ -14,19 +13,19 @@ import java.util.*;
 @Service
 public class QuizImpl implements Quiz {
 
-    private UserNameImpl userName;
+    private UserNameRequestService userName;
 
     private MessageSource messageSource;
 
-    private QuestionsReaderImpl reader;
-
     private BundleChoiceDependOnLocale bundle;
 
-    public QuizImpl(QuestionsReaderImpl reader, MessageSource messageSource, UserNameImpl userName, BundleChoiceDependOnLocale bundle){
-        this.reader = reader;
+    private QuestionsDao questionsDao;
+
+    public QuizImpl(MessageSource messageSource, UserNameRequestService userName, BundleChoiceDependOnLocale bundle, QuestionsDao questionsDao){
         this.messageSource = messageSource;
         this.userName = userName;
         this.bundle = bundle;
+        this.questionsDao = questionsDao;
     }
 
     private int correctCounter = 0;
@@ -34,8 +33,7 @@ public class QuizImpl implements Quiz {
 
     public void collectQuestions() {
         questionsMap = new HashMap<String, List<String>>();
-        QuestionsDao questions = new QuestionsDaoImpl(reader);
-        questionsMap = questions.getQuestions();
+        questionsMap = questionsDao.getQuestions();
 
     }
 
