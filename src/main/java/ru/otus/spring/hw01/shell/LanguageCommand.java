@@ -12,8 +12,6 @@ import java.util.Locale;
 public class LanguageCommand {
     private BundleChoiceDependOnLocale bundle;
 
-    private String language;
-
     @Autowired
     public LanguageCommand(BundleChoiceDependOnLocale bundle){
         this.bundle = bundle;
@@ -21,7 +19,6 @@ public class LanguageCommand {
 
     @ShellMethod("Change language (en-English, ru-Russian)")
     public void language(@Pattern(regexp = "^en|ru$") String language){
-        this.language = language;
 
         switch (language) {
             case "en":
