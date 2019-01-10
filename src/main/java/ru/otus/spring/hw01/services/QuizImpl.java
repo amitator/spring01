@@ -2,7 +2,7 @@ package ru.otus.spring.hw01.services;
 
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
-import ru.otus.spring.hw01.dao.QuestionsDaoImpl;
+import ru.otus.spring.hw01.dao.QuestionsDao;
 
 import java.util.*;
 
@@ -13,15 +13,15 @@ import java.util.*;
 @Service
 public class QuizImpl implements Quiz {
 
-    private UserNameRequestServiceImpl userName;
+    private UserNameRequestService userName;
 
     private MessageSource messageSource;
 
     private BundleChoiceDependOnLocale bundle;
 
-    private QuestionsDaoImpl questionsDao;
+    private QuestionsDao questionsDao;
 
-    public QuizImpl(MessageSource messageSource, UserNameRequestServiceImpl userName, BundleChoiceDependOnLocale bundle, QuestionsDaoImpl questionsDao){
+    public QuizImpl(MessageSource messageSource, UserNameRequestService userName, BundleChoiceDependOnLocale bundle, QuestionsDao questionsDao){
         this.messageSource = messageSource;
         this.userName = userName;
         this.bundle = bundle;
