@@ -14,7 +14,7 @@ import java.util.*;
 @Service
 public class QuizImpl implements Quiz {
 
-    private UserNameImpl userName;
+    private UserNameRequestServiceImpl userName;
 
     private MessageSource messageSource;
 
@@ -22,7 +22,7 @@ public class QuizImpl implements Quiz {
 
     private BundleChoiceDependOnLocale bundle;
 
-    public QuizImpl(QuestionsReaderImpl reader, MessageSource messageSource, UserNameImpl userName, BundleChoiceDependOnLocale bundle){
+    public QuizImpl(QuestionsReaderImpl reader, MessageSource messageSource, UserNameRequestServiceImpl userName, BundleChoiceDependOnLocale bundle){
         this.reader = reader;
         this.messageSource = messageSource;
         this.userName = userName;
